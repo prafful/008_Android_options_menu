@@ -28,13 +28,16 @@ class MainActivity : AppCompatActivity() {
         onOptionItemSelected
          */
 
+        //enable bottom app bar to work as actionbar
+        setSupportActionBar(findViewById(R.id.bottomAppBar))
 
     }
 
     //inflate the menu. Link menu.xml with this activity
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         Log.i("OBBOMENU", "onCreate: of options menu ")
-       menuInflater.inflate(R.menu.menu, menu)
+       //menuInflater.inflate(R.menu.menu, menu)
+        menuInflater.inflate(R.menu.bottom_bar, menu)
         return true
     }
 
@@ -53,17 +56,32 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.menuitem3 ->{
                 Log.i("OBBOMENU", "onOptionsItemSelected: ${item.toString()}")
-                Toast.makeText(this, "Go", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Go", Toast.LENGTH_SHORT).show()
                 return true
             }
             R.id.menuitem4 ->{
                 Log.i("OBBOMENU", "onOptionsItemSelected: ${item.toString()}")
-                Toast.makeText(this, "Node", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Node", Toast.LENGTH_SHORT).show()
                 return true
             }
             R.id.menuitem5 ->{
                 Log.i("OBBOMENU", "onOptionsItemSelected: ${item.toString()}")
-                Toast.makeText(this, "React", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "React", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.menuitem6 ->{
+                Log.i("OBBOMENU", "BottomAppBar: ${item.toString()}")
+                Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.menuitem7 ->{
+                Log.i("OBBOMENU", "BottomAppBar: ${item.toString()}")
+                Toast.makeText(this, "Email", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            R.id.menuitem8 ->{
+                Log.i("OBBOMENU", "BottomAppBar: ${item.toString()}")
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
